@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'home.dart';
 
 class registerPage extends StatelessWidget{
 final _formKey = GlobalKey<FormState>();
@@ -25,9 +26,9 @@ var confirmPass;
                   children: <Widget> [
                     Container(
                       child: Text(
-                          "CREATE NEW ACCOUNT",
+                          "FIRST CREATE NEW ACCOUNT BEFORE LOGIN !!!",
                         style: TextStyle(
-                          fontSize: 20
+                          fontSize: 18
                         ),
                       ),
                       alignment: Alignment.center,
@@ -37,11 +38,11 @@ var confirmPass;
                       child :CircleAvatar(
                         backgroundColor: Colors.white,
                         child: Image.asset(
-                          'assets/user.png',
-                          height: 200,
-                          color: Colors.deepPurple,
+                          'assets/tidur.gif',
+                          height: 275,
+                          // color: Colors.deepPurple,
                         ),
-                        radius: 75,
+                        radius: 125,
                       )
                     ),
                     Form(
@@ -145,8 +146,16 @@ var confirmPass;
                                   if (_formKey.currentState!.validate()) {
                                     // If the form is valid, display a snackbar. In the real world,
                                     // you'd often call a server or save the information in a database.
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      const SnackBar(content: Text('Processing Data Register')),
+                                    // ScaffoldMessenger.of(context).showSnackBar(
+                                    //   const SnackBar(content: Text('Processing Data Register')),
+                                    // );
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (BuildContext context){
+                                              return home();
+                                            }
+                                        )
                                     );
                                   }
                                 },
@@ -157,6 +166,7 @@ var confirmPass;
                                   primary: Colors.deepPurple,
                                   onPrimary: Colors.purple,
                                 ),
+
                               ),
                             )
                           ],

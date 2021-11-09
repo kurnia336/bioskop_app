@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'register.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class firstPage extends StatelessWidget{
 
   @override
@@ -13,13 +14,13 @@ class firstPage extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image.asset(
-              'assets/logo.png',
-              height: 150,
+              'assets/home.gif',
+              height: 200,
             ),
             Container(
               padding: EdgeInsets.only(top: 50),
               child: Text(
-                'New Experience',
+                'Bugcat Capoo',
                 style: new TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold
@@ -29,7 +30,7 @@ class firstPage extends StatelessWidget{
             Container(
               padding: EdgeInsets.only(top: 30),
               child: Text(
-                'Watch a new Movie Anime much easier than any before',
+                'Bugcat Capoo Gif Gallery !!!',
                 style: new TextStyle(
                   fontSize: 20,
                   color: Colors.grey
@@ -39,12 +40,14 @@ class firstPage extends StatelessWidget{
             ),
             Container(
               padding: EdgeInsets.only(top: 100),
-              child: TextButton(
+              child: TextButton.icon(
                 style: ButtonStyle(
                   foregroundColor: MaterialStateProperty.all(Colors.white),
                   backgroundColor: MaterialStateProperty.all(Colors.deepPurpleAccent),
-
+                  padding: MaterialStateProperty.all<EdgeInsets>(
+                      EdgeInsets.all(20)),
                 ),
+
                 onPressed: () {
                   Navigator.push(
                       context, 
@@ -55,14 +58,19 @@ class firstPage extends StatelessWidget{
                       )
                   );
                 },
-                child : Container(
-                  padding: EdgeInsets.all(10),
-                  child: Text('Get Started',
-                    style: new TextStyle(
-                      fontSize: 20,
-                    ),textAlign: TextAlign.center,
-                  ),
-                )
+                label: Icon(FontAwesomeIcons.caretRight,
+                ),
+                icon: Text("View Gallery",style: TextStyle(
+                color: Colors.white, fontSize: 16.0,)),
+                // child : Container(
+                //   padding: EdgeInsets.all(10),
+                //   child: Text('Get Started',
+                //     style: new TextStyle(
+                //       fontSize: 20,
+                //     ),
+                //     textAlign: TextAlign.center,
+                //   ),
+                // ),
               ),
             ),
             Row(
@@ -74,7 +82,7 @@ class firstPage extends StatelessWidget{
                 ),
                 GestureDetector(
                   onTap: (){
-                    print("Hello World");
+                    print("UwU");
                   },
                   child: Container(
                     padding: EdgeInsets.only(top: 20),
