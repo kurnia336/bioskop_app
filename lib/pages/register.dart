@@ -1,4 +1,5 @@
 
+import 'package:bioskop_app/pages/genre.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'home.dart';
@@ -86,6 +87,9 @@ var confirmPass;
                                   if(value == null || value.isEmpty){
                                     return 'Email tidak boleh kosong';
                                   }
+                                  if(!value.contains("@")){
+                                    return 'Tidak terdapat @';
+                                  }
                                   if(value.length > 50){
                                     return 'Email is so long, max 50 characters';
                                   }
@@ -153,7 +157,8 @@ var confirmPass;
                                         context,
                                         MaterialPageRoute(
                                             builder: (BuildContext context){
-                                              return home();
+                                              // return home();
+                                              return genrePage();
                                             }
                                         )
                                     );

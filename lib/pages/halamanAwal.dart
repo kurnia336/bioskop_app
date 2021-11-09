@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'register.dart';
+import 'login.dart';
+import 'home.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class firstPage extends StatelessWidget{
 
@@ -53,7 +55,8 @@ class firstPage extends StatelessWidget{
                       context, 
                       MaterialPageRoute(
                         builder: (BuildContext context){
-                          return registerPage();
+                          // return registerPage();
+                          return home();
                         }
                       )
                   );
@@ -82,7 +85,15 @@ class firstPage extends StatelessWidget{
                 ),
                 GestureDetector(
                   onTap: (){
-                    print("UwU");
+                    // print("UwU");
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context){
+                              return loginPage();
+                            }
+                        )
+                    );
                   },
                   child: Container(
                     padding: EdgeInsets.only(top: 20),
